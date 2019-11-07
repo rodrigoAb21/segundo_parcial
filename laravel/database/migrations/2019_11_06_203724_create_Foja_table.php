@@ -15,7 +15,16 @@ class CreateFojaTable extends Migration
     {
         Schema::create('foja', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('descripcion');
+            $table->dateTime('fecha');
+            $table->string('src');
+            $table->text('contenido');
+
+            $table->unsignedInteger('expediente_id');
+            $table->foreign('expediente_id')->references('id')->on('expediente')->onDelete('cascade');
+
+            $table->unsignedInteger('tipo_foja_id');
+            $table->foreign('tipo_foja_id')->references('id')->on('tipo_foja')->onDelete('cascade');
         });
     }
 
