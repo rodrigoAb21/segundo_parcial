@@ -15,7 +15,7 @@ class CreateTipoFojaTable extends Migration
     {
         Schema::create('tipo_foja', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('nombre');
         });
     }
 

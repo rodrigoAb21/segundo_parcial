@@ -15,7 +15,12 @@ class CreateDemandadoExpedienteTable extends Migration
     {
         Schema::create('dmd_exp', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+
+            $table->unsignedInteger('dmd_id');
+            $table->foreign('dmd_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->unsignedInteger('expediente_id');
+            $table->foreign('expediente_id')->references('id')->on('expediente')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,10 @@ class CreateJuzgadoTable extends Migration
     {
         Schema::create('juzgado', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('nombre');
+            $table->string('departamento');
+            $table->string('direccion');
+            $table->string('telefono');
         });
     }
 
