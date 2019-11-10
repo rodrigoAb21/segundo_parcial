@@ -17,14 +17,12 @@ class CreateFojaTable extends Migration
             $table->increments('id');
             $table->string('descripcion');
             $table->dateTime('fecha');
+            $table->dateTime('tipo');
             $table->string('src');
             $table->text('contenido');
 
             $table->unsignedInteger('expediente_id');
             $table->foreign('expediente_id')->references('id')->on('expediente')->onDelete('cascade');
-
-            $table->unsignedInteger('tipo_foja_id');
-            $table->foreign('tipo_foja_id')->references('id')->on('tipo_foja')->onDelete('cascade');
         });
     }
 

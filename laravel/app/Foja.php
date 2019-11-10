@@ -14,7 +14,7 @@ class Foja extends Model
         'fecha',
         'src',
         'contenido',
-        'tipo_foja_id',
+        'tipo',
         'expediente_id',
     ];
 }
