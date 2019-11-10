@@ -12,7 +12,5 @@ class Juzgado extends Model
     protected $fillable = [
         'nombre',
         'departamento',
-        'direccion',
-        'telefono',
     ];
 }

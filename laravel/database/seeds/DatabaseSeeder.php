@@ -135,9 +135,42 @@ class DatabaseSeeder extends Seeder
 
     // Juzgados
 
-    // Expedientes
+        DB::table('juzgado')->insert([
+            'nombre' => 'Publico Civil Comercial',
+            'departamento' => 'Santa Cruz',
+        ]);
 
-    // Fojas
+        DB::table('juzgado')->insert([
+            'nombre' => 'Publico de Familia',
+            'departamento' => 'Santa Cruz',
+        ]);
+
+        DB::table('juzgado')->insert([
+            'nombre' => 'Publico de la Niñez y Adolescencia',
+            'departamento' => 'Santa Cruz',
+        ]);
+
+        DB::table('juzgado')->insert([
+            'nombre' => 'De Partido del Trabajo y Seguridad Social',
+            'departamento' => 'Santa Cruz',
+        ]);
+
+        DB::table('juzgado')->insert([
+            'nombre' => 'Administrativos Coactivos Fiscales Tributarios',
+            'departamento' => 'Santa Cruz',
+        ]);
+
+        DB::table('juzgado')->insert([
+            'nombre' => 'De Sentencia Penal',
+            'departamento' => 'Santa Cruz',
+        ]);
+
+
+        // Expedientes
+
+
+
+        // Fojas
 
 
 

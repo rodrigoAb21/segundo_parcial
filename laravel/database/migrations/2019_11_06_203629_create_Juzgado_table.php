@@ -17,8 +17,6 @@ class CreateJuzgadoTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('departamento');
-            $table->string('direccion');
-            $table->string('telefono');
         });
     }
 
