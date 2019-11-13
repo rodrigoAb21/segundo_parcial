@@ -1,0 +1,12 @@
+WEB
+- casos de uso básico
+- casos de uso intermedios
+- casos de uso complejos
+- middlewares
+- API
+
+MOVIL
+- login
+
+
+DISEÑO DE VISTAS

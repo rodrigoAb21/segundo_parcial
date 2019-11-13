@@ -168,7 +168,31 @@ class DatabaseSeeder extends Seeder
 
         // Expedientes
 
+        DB::table('expediente')->insert([
+            'nurej' => '2019111105',
+            'web_id' => 'd45a7',
+            'fecha_recepcion' => \Carbon\Carbon::now(),
+            'descripcion' => 'Proceso 1',
+            'procedimiento' => 'Procedimiento 1',
+            'Materia' => 'Materia 1',
+            'nro_fojas' => 0,
+            'juez_id' => 2,
+            'juzgado_id' => 1,
+            'tipo_proceso_id' => 1,
+        ]);
 
+        DB::table('expediente')->insert([
+            'nurej' => '2019111205',
+            'web_id' => 's4w13',
+            'fecha_recepcion' => \Carbon\Carbon::now(),
+            'descripcion' => 'Proceso 2',
+            'procedimiento' => 'Procedimiento 2',
+            'Materia' => 'Materia 2',
+            'nro_fojas' => 0,
+            'juez_id' => 3,
+            'juzgado_id' => 2,
+            'tipo_proceso_id' => 3,
+        ]);
 
         // Fojas
 

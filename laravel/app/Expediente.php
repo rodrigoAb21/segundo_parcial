@@ -15,6 +15,7 @@ class Expediente extends Model
         'fecha_recepcion',
         'descripcion',
         'materia',
+        'procedimiento',
         'nro_fojas',
         'juez_id',
         'juzgado_id',
