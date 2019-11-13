@@ -113,7 +113,12 @@
                                 <span class="hide-menu"> Usuarios</span>
                             </a>
                         </li>
-
+                        <li class="{{ Request::is('juzgados*') ? 'nav-item active' : 'nav-item' }}">
+                            <a href="{{url('juzgados')}}" >
+                                <i class="fa fa-gavel"></i>
+                                <span class="hide-menu"> Juzgados</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

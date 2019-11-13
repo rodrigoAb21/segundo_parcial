@@ -29,3 +29,4 @@ Route::get('/', function () {
 })->middleware('auth');
 
 Route::resource('usuarios', 'UsuarioController');
+Route::resource('juzgados', 'JuzgadoController');

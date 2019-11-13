@@ -13,7 +13,13 @@
                     </div>
                 </div>
 
-
+                <div class="card text-center p-3" >
+                    <div class="card-body">
+                        <h4 class="card-title">Juzgados</h4>
+                        <p class="card-text"><i class="fa fa-gavel fa-3x"></i></p>
+                        <a class="btn btn-info btn-block" href="{{url('juzgados')}}"> Ver </a>
+                    </div>
+                </div>
 
             </div>
         </div>
