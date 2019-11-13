@@ -16,6 +16,7 @@
                         <table class="table table-hover table-bordered color-table info-table">
                             <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>NOMBRE</th>
                                 <th>DEPARTAMENTO</th>
                                 <th>OPCIONES</th>
@@ -24,6 +25,7 @@
                             <tbody>
                             @foreach($juzgados as $juzgado)
                                 <tr>
+                                    <td>{{$juzgado -> id}}</td>
                                     <td>{{$juzgado -> nombre}}</td>
                                     <td>{{$juzgado -> departamento}}</td>
                                     <td class="text-right ">

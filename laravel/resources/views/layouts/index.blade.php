@@ -39,7 +39,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand ligh" href="{{url('admin')}}">
+                    <a class="navbar-brand ligh" href="{{url('/')}}">
                         <!-- Logo icon -->
                         <b class="light-logo">
                             <i class="fa fa-archive"></i>
@@ -117,6 +117,12 @@
                             <a href="{{url('juzgados')}}" >
                                 <i class="fa fa-gavel"></i>
                                 <span class="hide-menu"> Juzgados</span>
+                            </a>
+                        </li>
+                        <li class="{{ Request::is('tipos*') ? 'nav-item active' : 'nav-item' }}">
+                            <a href="{{url('tipos')}}" >
+                                <i class="fa fa-window-restore"></i>
+                                <span class="hide-menu"> Tipos de procesos</span>
                             </a>
                         </li>
                     </ul>
