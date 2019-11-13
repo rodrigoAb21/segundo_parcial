@@ -5,9 +5,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="pb-2">Paises
+                    <h3 class="pb-2">Usuarios
                         <div class="float-right">
-                            <a class="btn btn-success" href="{{url('admin/paises/create')}}">
+                            <a class="btn btn-success" href="{{url('usuarios/create')}}">
                                 <i class="fa fa-plus"></i> Nuevo
                             </a>
                         </div>
@@ -16,23 +16,27 @@
                         <table class="table table-hover table-bordered color-table info-table">
                             <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>CI</th>
                                 <th>NOMBRE</th>
+                                <th>TELEFONO</th>
+                                <th>EMAIL</th>
                                 <th>OPCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($paises as $pais)
+                            @foreach($usuarios as $usuario)
                                 <tr>
-                                    <td>{{$pais -> id}}</td>
-                                    <td>{{$pais -> nombre}}</td>
+                                    <td>{{$usuario -> ci}}</td>
+                                    <td>{{$usuario -> nombre}}</td>
+                                    <td>{{$usuario -> telefono}}</td>
+                                    <td>{{$usuario -> email}}</td>
                                     <td class="text-right ">
-                                        <a href="{{url('admin/paises/'.$pais->id.'/edit')}}">
+                                        <a href="{{url('usuarios/'.$usuario->id.'/edit')}}">
                                             <button class="btn btn-warning">
                                                 <i class="fa fa-pen"></i>
                                             </button>
                                         </a>
-                                        <button type="button" class="btn btn-danger" onclick="modalEliminar('{{$pais -> nombre}}', '{{url('admin/paises/'.$pais -> id)}}')">
+                                        <button type="button" class="btn btn-danger" onclick="modalEliminar('{{$usuario -> nombre}}', '{{url('usuarios/'.$usuario -> id)}}')">
                                             <i class="fa fa-times"></i>
                                         </button>
                                     </td>
@@ -40,7 +44,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{$paises->links('pagination.default')}}
+                        {{$usuarios->links('pagination.default')}}
                     </div>
                 </div>
             </div>
@@ -53,8 +57,8 @@
             function modalEliminar(nombre, url) {
                 $('#modalEliminarForm').attr("action", url);
                 $('#metodo').val("delete");
-                $('#modalEliminarTitulo').html("Eliminar Pais");
-                $('#modalEliminarEnunciado').html("Realmente desea eliminar la pais: " + nombre + "?");
+                $('#modalEliminarTitulo').html("Eliminar Usuario");
+                $('#modalEliminarEnunciado').html("Realmente desea eliminar al usuario: " + nombre + "?");
                 $('#modalEliminar').modal('show');
             }
 

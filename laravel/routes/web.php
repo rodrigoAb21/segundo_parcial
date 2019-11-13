@@ -27,3 +27,5 @@ Route::post('logout', [
 Route::get('/', function () {
     return view('home');
 })->middleware('auth');
+
+Route::resource('usuarios', 'UsuarioController');
