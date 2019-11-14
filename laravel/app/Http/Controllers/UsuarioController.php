@@ -20,7 +20,6 @@ class UsuarioController extends Controller
 
     public function store(Request $request){
         $usuario = new User();
-        $usuario->ci = $request['ci'];
         $usuario->nombre = $request['nombre'];
         $usuario->telefono = $request['telefono'];
         $usuario->email = $request['email'];
@@ -41,7 +40,6 @@ class UsuarioController extends Controller
 
     public function update(Request $request, $id){
         $usuario = User::findOrFail($id);
-        $usuario->ci = $request['ci'];
         $usuario->nombre = $request['nombre'];
         $usuario->telefono = $request['telefono'];
         $usuario->email = $request['email'];

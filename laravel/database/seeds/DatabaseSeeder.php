@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'ci' => '0000001',
             'nombre' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -25,7 +24,6 @@ class DatabaseSeeder extends Seeder
     // Usuarios
 
         DB::table('users')->insert([
-            'ci' => '6534534',
             'nombre' => 'Mario Lopez',
             'email' => 'mario@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -34,7 +32,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'ci' => '2342434',
             'nombre' => 'Carlos Silva',
             'email' => 'carlos@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -43,7 +40,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'ci' => '5345436',
             'nombre' => 'Julia Apaza',
             'email' => 'julia@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -52,7 +48,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'ci' => '2347899',
             'nombre' => 'Roberto Rodas',
             'email' => 'roberto@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -61,7 +56,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'ci' => '3354535',
             'nombre' => 'Pedro Campos',
             'email' => 'pedro@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -70,7 +64,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'ci' => '4445353',
             'nombre' => 'Marcos Perez',
             'email' => 'marcos@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -79,7 +72,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'ci' => '11323443',
             'nombre' => 'Silvana Caceres',
             'email' => 'silvana@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -88,7 +80,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'ci' => '55435342',
             'nombre' => 'Fidelia Morales',
             'email' => 'fidelia@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -97,7 +88,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'ci' => '3323134',
             'nombre' => 'Tatiana Quispe',
             'email' => 'tatiana@gmail.com',
             'password' => bcrypt('rodrigo'),
@@ -106,7 +96,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'ci' => '7776545',
             'nombre' => 'Jorge Vaca',
             'email' => 'jorge@gmail.com',
             'password' => bcrypt('rodrigo'),

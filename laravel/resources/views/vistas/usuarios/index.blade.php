@@ -17,7 +17,6 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>CI</th>
                                 <th>NOMBRE</th>
                                 <th>TELEFONO</th>
                                 <th>EMAIL</th>
@@ -28,7 +27,6 @@
                             @foreach($usuarios as $usuario)
                                 <tr>
                                     <td>{{$usuario -> id}}</td>
-                                    <td>{{$usuario -> ci}}</td>
                                     <td>{{$usuario -> nombre}}</td>
                                     <td>{{$usuario -> telefono}}</td>
                                     <td>{{$usuario -> email}}</td>
