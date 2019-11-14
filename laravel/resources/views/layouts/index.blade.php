@@ -125,6 +125,12 @@
                                 <span class="hide-menu"> Tipos de procesos</span>
                             </a>
                         </li>
+                        <li class="{{ Request::is('expedientes*') ? 'nav-item active' : 'nav-item' }}">
+                            <a href="{{url('expedientes')}}" >
+                                <i class="fa fa-window-restore"></i>
+                                <span class="hide-menu"> Expedientes</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

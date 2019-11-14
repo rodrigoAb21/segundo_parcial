@@ -31,3 +31,4 @@ Route::get('/', function () {
 Route::resource('usuarios', 'UsuarioController');
 Route::resource('juzgados', 'JuzgadoController');
 Route::resource('tipos', 'TipoProcesoController');
+Route::resource('expedientes', 'ExpedienteController');
