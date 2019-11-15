@@ -23,6 +23,7 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="{{url('tipos')}}" class="btn btn-warning">Atras</a>
                         <button type="submit" class="btn btn-info">Guardar</button>
                     </form>
                 </div>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Expediente;
+use App\TipoProceso;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -16,7 +18,13 @@ class ExpedienteController extends Controller
     }
 
     public function create(){
-        return view('vistas.expedientes.create');
+        $materias = ['FAMILIAR', 'PENAL', 'CIVIL', 'LABORAL', 'CONSTITUCIONAL'];
+
+        return view('vistas.expedientes.create', [
+            'materias' => $materias,
+            'tipos' => TipoProceso::all(),
+            'usuarios' => User::where('tipo', '=', 'Juez')->get(),
+            ]);
     }
 
     public function store(Request $request){
@@ -27,7 +35,7 @@ class ExpedienteController extends Controller
         $expediente->descripcion = $request['descripcion'];
         $expediente->materia = $request['materia'];
         $expediente->procedimiento = $request['procedimiento'];
-        $expediente->nro_fojas = $request['nro_fojas'];
+        $expediente->nro_fojas = 0;
         $expediente->juez_id = $request['juez_id'];
         $expediente->juzgado_id = $request['juzgado_id'];
         $expediente->tipo_proceso_id = $request['tipo_proceso_id'];
@@ -39,8 +47,12 @@ class ExpedienteController extends Controller
     }
 
     public function edit($id){
+        $materias = ['FAMILIAR', 'PENAL', 'CIVIL', 'LABORAL', 'CONSTITUCIONAL'];
         return view('vistas.expedientes.edit', [
             'expediente' => Expediente::findOrFail($id),
+            'materias' => $materias,
+            'tipos' => TipoProceso::all(),
+            'usuarios' => User::where('tipo', '=', 'Juez')->get(),
         ]);
     }
 

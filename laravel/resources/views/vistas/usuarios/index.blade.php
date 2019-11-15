@@ -18,6 +18,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>NOMBRE</th>
+                                <th>TIPO</th>
                                 <th>TELEFONO</th>
                                 <th>EMAIL</th>
                                 <th>OPCIONES</th>
@@ -28,6 +29,7 @@
                                 <tr>
                                     <td>{{$usuario -> id}}</td>
                                     <td>{{$usuario -> nombre}}</td>
+                                    <td>{{$usuario -> tipo}}</td>
                                     <td>{{$usuario -> telefono}}</td>
                                     <td>{{$usuario -> email}}</td>
                                     <td class="text-right ">

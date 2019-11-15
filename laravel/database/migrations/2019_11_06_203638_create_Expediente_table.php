@@ -18,7 +18,7 @@ class CreateExpedienteTable extends Migration
             $table->string('nurej');
             $table->string('web_id');
             $table->dateTime('fecha_recepcion');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable();
             $table->string('materia');
             $table->string('procedimiento');
             $table->integer('nro_fojas');

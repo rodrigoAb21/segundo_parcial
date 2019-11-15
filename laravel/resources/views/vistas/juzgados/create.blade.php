@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="{{url('/')}}" class="btn btn-warning">Atras</a>
+                        <a href="{{url('juzgados')}}" class="btn btn-warning">Atras</a>
                         <button type="submit" class="btn btn-info">Guardar</button>
                     </form>
                 </div>

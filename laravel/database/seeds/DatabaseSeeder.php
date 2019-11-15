@@ -24,102 +24,130 @@ class DatabaseSeeder extends Seeder
     // Usuarios
 
         DB::table('users')->insert([
+            'ci' => '84152356',
+            'codigo' => '201556213',
             'nombre' => 'Mario Lopez',
             'email' => 'mario@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '67754345',
-            'tipo' => 'Usuario',
+            'tipo' => 'Juez',
         ]);
 
         DB::table('users')->insert([
+            'ci' => '55485161',
+            'codigo' => '2003215455',
             'nombre' => 'Carlos Silva',
             'email' => 'carlos@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '33453455',
-            'tipo' => 'Usuario',
+            'tipo' => 'Juez',
         ]);
 
         DB::table('users')->insert([
+            'ci' => '77789451',
+            'codigo' => '200354651',
             'nombre' => 'Julia Apaza',
             'email' => 'julia@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '55435352',
-            'tipo' => 'Usuario',
+            'tipo' => 'Abogado',
         ]);
 
         DB::table('users')->insert([
+            'ci' => '9983523',
+            'codigo' => '200365156',
             'nombre' => 'Roberto Rodas',
             'email' => 'roberto@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '775465434',
-            'tipo' => 'Usuario',
+            'tipo' => 'Abogado',
         ]);
 
         DB::table('users')->insert([
+            'ci' => '8776686',
+            'codigo' => '200765421',
             'nombre' => 'Pedro Campos',
             'email' => 'pedro@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '66345346',
-            'tipo' => 'Usuario',
+            'tipo' => 'Abogado',
         ]);
 
         DB::table('users')->insert([
+            'ci' => '7787668',
+            'codigo' => '20112334',
             'nombre' => 'Marcos Perez',
             'email' => 'marcos@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '88657565',
-            'tipo' => 'Usuario',
+            'tipo' => 'Abogado',
         ]);
 
         DB::table('users')->insert([
+            'ci' => '34534544',
             'nombre' => 'Silvana Caceres',
             'email' => 'silvana@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '56456455',
-            'tipo' => 'Usuario',
+            'tipo' => 'Demandado/Demandante',
         ]);
 
         DB::table('users')->insert([
+            'ci' => '77456345',
             'nombre' => 'Fidelia Morales',
             'email' => 'fidelia@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '88657656',
-            'tipo' => 'Usuario',
+            'tipo' => 'Demandado/Demandante',
         ]);
 
         DB::table('users')->insert([
+            'ci' => '88456345',
             'nombre' => 'Tatiana Quispe',
             'email' => 'tatiana@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '34532342',
-            'tipo' => 'Usuario',
+            'tipo' => 'Demandado/Demandante',
         ]);
 
         DB::table('users')->insert([
+            'ci' => '53452664',
             'nombre' => 'Jorge Vaca',
             'email' => 'jorge@gmail.com',
             'password' => bcrypt('rodrigo'),
             'telefono' => '345634634',
-            'tipo' => 'Usuario',
+            'tipo' => 'Demandado/Demandante',
         ]);
 
     // Tipos Proceso
 
 
         DB::table('tipo_proceso')->insert([
-            'nombre' => 'Penal',
+            'nombre' => 'ACCION DE CUMPLIMIENTO',
         ]);
 
         DB::table('tipo_proceso')->insert([
-            'nombre' => 'Civil',
+            'nombre' => 'CONCUSION',
         ]);
 
         DB::table('tipo_proceso')->insert([
-            'nombre' => 'Familiar',
+            'nombre' => 'ASISTENCIA FAMILIAR',
         ]);
 
         DB::table('tipo_proceso')->insert([
-            'nombre' => 'Laboral',
+            'nombre' => 'LESIONES GRAVES Y LEVES',
+        ]);
+
+        DB::table('tipo_proceso')->insert([
+            'nombre' => 'TRAFICO DE SUSTANCIAS CONTROLADAS',
+        ]);
+
+        DB::table('tipo_proceso')->insert([
+            'nombre' => 'VIOLENCIA FAMILIAR O DOMESTICA',
+        ]);
+
+        DB::table('tipo_proceso')->insert([
+            'nombre' => 'ROBO AGRAVADO',
         ]);
 
     // Juzgados
@@ -161,26 +189,26 @@ class DatabaseSeeder extends Seeder
             'nurej' => '2019111105',
             'web_id' => 'd45a7',
             'fecha_recepcion' => \Carbon\Carbon::now(),
-            'descripcion' => 'Proceso 1',
-            'procedimiento' => 'Procedimiento 1',
-            'Materia' => 'Materia 1',
+            'descripcion' => 'INICIO DE INVESTIGACION',
+            'procedimiento' => 'FAMILIA',
+            'Materia' => 'FAMILIA',
             'nro_fojas' => 0,
             'juez_id' => 2,
             'juzgado_id' => 1,
-            'tipo_proceso_id' => 1,
+            'tipo_proceso_id' => 3,
         ]);
 
         DB::table('expediente')->insert([
             'nurej' => '2019111205',
             'web_id' => 's4w13',
             'fecha_recepcion' => \Carbon\Carbon::now(),
-            'descripcion' => 'Proceso 2',
-            'procedimiento' => 'Procedimiento 2',
-            'Materia' => 'Materia 2',
+            'descripcion' => 'ACCION DE LIBERTAD',
+            'procedimiento' => 'PENAL',
+            'Materia' => 'PENAL',
             'nro_fojas' => 0,
             'juez_id' => 3,
             'juzgado_id' => 2,
-            'tipo_proceso_id' => 3,
+            'tipo_proceso_id' => 4,
         ]);
 
         // Fojas

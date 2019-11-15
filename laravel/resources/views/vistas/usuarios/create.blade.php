@@ -24,6 +24,26 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
+                                    <label>C.I.</label>
+                                    <input
+                                           type="text"
+                                           class="form-control"
+                                           value="{{old('ci')}}"
+                                           name="ci">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>COD. Profesional</label>
+                                    <input
+                                           type="text"
+                                           class="form-control"
+                                           value="{{old('codigo')}}"
+                                           name="codigo">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
                                     <label>Telefono</label>
                                     <input required
                                            type="text"
@@ -53,7 +73,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="{{url('/')}}" class="btn btn-warning">Atras</a>
+                        <a href="{{url('usuarios')}}" class="btn btn-warning">Atras</a>
                         <button type="submit" class="btn btn-info">Guardar</button>
                     </form>
                 </div>

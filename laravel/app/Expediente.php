@@ -21,4 +21,9 @@ class Expediente extends Model
         'juzgado_id',
         'tipo_proceso_id',
     ];
+
+    public function tipoProceso()
+    {
+        return $this->belongsTo('App\TipoProceso', 'tipo_proceso_id', 'id');
+    }
 }

@@ -6,66 +6,94 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="pb-2">
-                        Nueva eleccion
+                        Nuevo Expediente
                     </h3>
 
-                    <form method="POST" action="{{url('admin/elecciones')}}" autocomplete="off">
+                    <form method="POST" action="{{url('admin/expedientes')}}" autocomplete="off">
                         {{csrf_field()}}
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <label>Nombre</label>
-                                    <input required
-                                           type="text"
-                                           class="form-control"
-                                           value="{{old('nombre')}}"
-                                           name="nombre">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Fecha</label>
-                                    <input required
-                                           type="date"
-                                           class="form-control"
-                                           value="{{old('fecha')}}"
-                                           name="fecha">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Nro Mesas</label>
+                                    <label>NUREJ</label>
                                     <input required
                                            type="number"
                                            class="form-control"
-                                           value="{{old('mesas')}}"
-                                           min="1"
-                                           max="200"
-                                           name="mesas">
+                                           value="{{old('nurej')}}"
+                                           name="nurej">
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <label>Estado</label>
-                                    <select class="form-control" name="estado">
-                                        @foreach($estados as $estado)
-                                            <option value="{{$estado}}">{{$estado}}</option>
+                                    <label>WEB_ID</label>
+                                    <input required
+                                           type="text"
+                                           class="form-control"
+                                           value="{{old('web_id')}}"
+                                           name="web_id">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Descripcion</label>
+                                    <input
+                                           type="text"
+                                           class="form-control"
+                                           value="{{old('descripcion')}}"
+                                           name="descripcion">
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Materia</label>
+                                    <select class="form-control" name="materia">
+                                        @foreach($materias as $materia)
+                                            <option value="{{$materia}}">{{$materia}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Procedimiento</label>
+                                    <input required
+                                           type="text"
+                                           class="form-control"
+                                           value="{{old('procedimiento')}}"
+                                           name="procedimiento">
+                                </div>
+                            </div>
+
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <label>Tipo</label>
-                                    <select class="form-control" name="tipo">
+                                    <select class="form-control" name="tipo_proceso_id">
                                         @foreach($tipos as $tipo)
-                                            <option value="{{$tipo}}">{{$tipo}}</option>
+                                            <option value="{{$tipo->id}}">{{$tipo->nombre}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
+
+                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Tipo</label>
+                                    <select class="form-control" name="juzgado_id">
+                                        @foreach($usuarios as $usuario)
+                                            <option value="{{$usuario->id}}">{{$usuario->nombre}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+
+
                         </div>
+                        <a href="{{url('expedientes')}}" class="btn btn-warning">Atras</a>
                         <button type="submit" class="btn btn-info">Guardar</button>
                     </form>
                 </div>

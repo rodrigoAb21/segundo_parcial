@@ -10,12 +10,15 @@ class UsuarioController extends Controller
     public function index(){
         return view('vistas.usuarios.index',
             [
-                'usuarios' => User::paginate(10),
+                'usuarios' => User::where('tipo', '!=', 'admin')->paginate(10),
             ]);
     }
 
     public function create(){
-        return view('vistas.usuarios.create');
+        $tipos = ['Juez', 'Abogado', 'Demandado/Demandante'];
+        return view('vistas.usuarios.create',[
+            'tipos' => $tipos,
+        ]);
     }
 
     public function store(Request $request){
