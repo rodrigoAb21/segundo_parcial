@@ -38,10 +38,10 @@
                                 <div class="form-group">
                                     <label>Descripcion</label>
                                     <input
-                                           type="text"
-                                           class="form-control"
-                                           value="{{old('descripcion')}}"
-                                           name="descripcion">
+                                            type="text"
+                                            class="form-control"
+                                            value="{{old('descripcion')}}"
+                                            name="descripcion">
                                 </div>
                             </div>
 
@@ -79,12 +79,12 @@
                                 </div>
                             </div>
 
-                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <label>Juzgado</label>
                                     <select class="form-control" name="juzgado_id">
                                         @foreach($juzgados as $juzgado)
-                                            <option value="{{$juzgado->id}}">{{$juzgado->nombre}}</option>
+                                            <option value="{{$juzgado->id}}">{{$juzgado->nombre}} - {{$juzgado->departamento}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -94,8 +94,60 @@
                                 <div class="form-group">
                                     <label>Juez</label>
                                     <select class="form-control" name="juez_id">
+                                        @foreach($jueces as $juez)
+                                            <option value="{{$juez->id}}">{{$juez->nombre}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <hr>
+                        <br>
+
+                        <div class="row">
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Demandante</label>
+                                    <select class="form-control" name="dmt_id">
                                         @foreach($usuarios as $usuario)
                                             <option value="{{$usuario->id}}">{{$usuario->nombre}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Demandado</label>
+                                    <select class="form-control" name="dmd_id">
+                                        @foreach($usuarios as $usuario)
+                                            <option value="{{$usuario->id}}">{{$usuario->nombre}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Rep. Legal Demandante</label>
+                                    <select class="form-control" name="rep_dmt_id">
+                                        @foreach($abogados as $abogado)
+                                            <option value="{{$abogado->id}}">{{$abogado->nombre}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Rep. Legal Demandado</label>
+                                    <select class="form-control" name="rep_dmd_id">
+                                        @foreach($abogados as $abogado)
+                                            <option value="{{$abogado->id}}">{{$abogado->nombre}}</option>
                                         @endforeach
                                     </select>
                                 </div>

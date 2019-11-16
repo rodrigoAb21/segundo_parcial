@@ -24,7 +24,9 @@ class ExpedienteController extends Controller
         return view('vistas.expedientes.create', [
             'materias' => $materias,
             'tipos' => TipoProceso::all(),
-            'usuarios' => User::where('tipo', '=', 'Juez')->get(),
+            'jueces' => User::where('tipo', '=', 'Juez')->get(),
+            'abogados' => User::where('tipo', '=', 'Abogado')->get(),
+            'usuarios' => User::where('tipo', '=', 'Demandado/Demandante')->get(),
             'juzgados' => Juzgado::all(),
             ]);
     }
@@ -39,6 +41,10 @@ class ExpedienteController extends Controller
         $expediente->procedimiento = $request['procedimiento'];
         $expediente->nro_fojas = 0;
         $expediente->juez_id = $request['juez_id'];
+        $expediente->dmt_id = $request['dmt_id'];
+        $expediente->dmd_id = $request['dmd_id'];
+        $expediente->rep_dmt_id = $request['rep_dmt_id'];
+        $expediente->rep_dmd_id = $request['rep_dmd_id'];
         $expediente->juzgado_id = $request['juzgado_id'];
         $expediente->tipo_proceso_id = $request['tipo_proceso_id'];
 
@@ -54,7 +60,9 @@ class ExpedienteController extends Controller
             'expediente' => Expediente::findOrFail($id),
             'materias' => $materias,
             'tipos' => TipoProceso::all(),
-            'usuarios' => User::where('tipo', '=', 'Juez')->get(),
+            'jueces' => User::where('tipo', '=', 'Juez')->get(),
+            'abogados' => User::where('tipo', '=', 'Abogado')->get(),
+            'usuarios' => User::where('tipo', '=', 'Demandado/Demandante')->get(),
             'juzgados' => Juzgado::all(),
         ]);
     }
@@ -67,6 +75,10 @@ class ExpedienteController extends Controller
         $expediente->materia = $request['materia'];
         $expediente->procedimiento = $request['procedimiento'];
         $expediente->juez_id = $request['juez_id'];
+        $expediente->dmt_id = $request['dmt_id'];
+        $expediente->dmd_id = $request['dmd_id'];
+        $expediente->rep_dmt_id = $request['rep_dmt_id'];
+        $expediente->rep_dmd_id = $request['rep_dmd_id'];
         $expediente->juzgado_id = $request['juzgado_id'];
         $expediente->tipo_proceso_id = $request['tipo_proceso_id'];
 

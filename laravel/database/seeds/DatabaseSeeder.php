@@ -196,6 +196,10 @@ class DatabaseSeeder extends Seeder
             'juez_id' => 2,
             'juzgado_id' => 1,
             'tipo_proceso_id' => 3,
+            'dmt_id' => 8,
+            'dmd_id' => 9,
+            'rep_dmt_id' => 4,
+            'rep_dmd_id' => 5,
         ]);
 
         DB::table('expediente')->insert([
@@ -209,6 +213,10 @@ class DatabaseSeeder extends Seeder
             'juez_id' => 3,
             'juzgado_id' => 2,
             'tipo_proceso_id' => 4,
+            'dmt_id' => 10,
+            'dmd_id' => 11,
+            'rep_dmt_id' => 6,
+            'rep_dmd_id' => 7,
         ]);
 
         // Fojas

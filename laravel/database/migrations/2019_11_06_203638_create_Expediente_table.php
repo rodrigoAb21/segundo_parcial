@@ -31,6 +31,18 @@ class CreateExpedienteTable extends Migration
 
             $table->unsignedInteger('juez_id');
             $table->foreign('juez_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->unsignedInteger('dmt_id');
+            $table->foreign('dmt_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->unsignedInteger('dmd_id');
+            $table->foreign('dmd_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->unsignedInteger('rep_dmt_id');
+            $table->foreign('rep_dmt_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->unsignedInteger('rep_dmd_id');
+            $table->foreign('rep_dmd_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

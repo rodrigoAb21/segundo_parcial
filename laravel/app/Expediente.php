@@ -17,9 +17,13 @@ class Expediente extends Model
         'materia',
         'procedimiento',
         'nro_fojas',
-        'juez_id',
         'juzgado_id',
         'tipo_proceso_id',
+        'juez_id',
+        'dmt_id',
+        'dmd_id',
+        'rep_dmt_id',
+        'rep_dmd_id',
     ];
 
     public function tipoProceso()

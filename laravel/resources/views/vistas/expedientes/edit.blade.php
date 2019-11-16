@@ -94,9 +94,9 @@
                                     <select class="form-control" name="juzgado_id">
                                         @foreach($juzgados as $juzgado)
                                             @if($expediente->juzgado_id == $juzgado->id)
-                                                <option selected value="{{$juzgado->id}}">{{$juzgado->nombre}}</option>
+                                                <option selected value="{{$juzgado->id}}">{{$juzgado->nombre}} - {{$juzgado->departamento}}</option>
                                             @else
-                                                <option value="{{$juzgado->id}}">{{$juzgado->nombre}}</option>
+                                                <option value="{{$juzgado->id}}">{{$juzgado->nombre}} - {{$juzgado->departamento}}</option>
                                             @endif
                                         @endforeach
                                     </select>
@@ -107,11 +107,79 @@
                                 <div class="form-group">
                                     <label>Juez</label>
                                     <select class="form-control" name="juez_id">
+                                        @foreach($jueces as $juez)
+                                            @if($expediente->juez_id == $juez->id)
+                                                <option selected value="{{$juez->id}}">{{$juez->nombre}}</option>
+                                            @else
+                                                <option value="{{$juez->id}}">{{$juez->nombre}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <hr>
+                        <br>
+
+                        <div class="row">
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Demandante</label>
+                                    <select class="form-control" name="dmt_id">
                                         @foreach($usuarios as $usuario)
-                                            @if($expediente->juez_id == $usuario->id)
+                                            @if($expediente->dmt_id == $usuario->id)
                                                 <option selected value="{{$usuario->id}}">{{$usuario->nombre}}</option>
                                             @else
                                                 <option value="{{$usuario->id}}">{{$usuario->nombre}}</option>
+                                            @endif
+
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Demandado</label>
+                                    <select class="form-control" name="dmd_id">
+                                        @foreach($usuarios as $usuario)
+                                            @if($expediente->dmd_id == $usuario->id)
+                                                <option selected value="{{$usuario->id}}">{{$usuario->nombre}}</option>
+                                            @else
+                                                <option value="{{$usuario->id}}">{{$usuario->nombre}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Rep. Legal Demandante</label>
+                                    <select class="form-control" name="rep_dmt_id">
+                                        @foreach($abogados as $abogado)
+                                            @if($expediente->rep_dmt_id == $abogado->id)
+                                                <option selected value="{{$abogado->id}}">{{$abogado->nombre}}</option>
+                                            @else
+                                                <option value="{{$abogado->id}}">{{$abogado->nombre}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Rep. Legal Demandado</label>
+                                    <select class="form-control" name="rep_dmd_id">
+                                        @foreach($abogados as $abogado)
+                                            @if($expediente->rep_dmd_id == $abogado->id)
+                                                <option selected value="{{$abogado->id}}">{{$abogado->nombre}}</option>
+                                            @else
+                                                <option value="{{$abogado->id}}">{{$abogado->nombre}}</option>
                                             @endif
                                         @endforeach
                                     </select>
