@@ -52,6 +52,7 @@ Route::middleware('auth')->group(function () {
         });
 
         Route::get('usuario/expedientes', 'UsuarioWebController@index');
+        Route::get('usuario/expedientes/{id}', 'UsuarioWebController@verExpediente');
         Route::get('usuario/expedientes/{id}/fojas', 'UsuarioWebController@fojas');
         Route::get('usuario/expedientes/{id}/fojas/{fojaId}', 'UsuarioWebController@verFoja');
         Route::get('usuario/editarCuenta/{id}', 'UsuarioWebController@editUsuario');

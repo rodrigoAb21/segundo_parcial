@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Expediente;
 use App\Foja;
+use App\Juzgado;
+use App\TipoProceso;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +36,20 @@ class UsuarioWebController extends Controller
     public function verFoja($id, $fojaId){
         return view('vistas.usuario.expedientes.fojas.view', [
             'foja' => Foja::findOrFail($fojaId),
+        ]);
+    }
+
+    public function verExpediente($id){
+        $expediente = Expediente::findOrFail($id);
+        return view('vistas.usuario.expedientes.view', [
+            'expediente' => $expediente,
+            'tipo' => TipoProceso::findOrFail($expediente->tipo_proceso_id),
+            'juez' => User::findOrFail($expediente->juez_id),
+            'rep_dmt' => User::findOrFail($expediente->rep_dmt_id),
+            'rep_dmd' => User::findOrFail($expediente->rep_dmd_id),
+            'dmt' => User::findOrFail($expediente->dmt_id),
+            'dmd' => User::findOrFail($expediente->dmd_id),
+            'juzgado' => Juzgado::findOrFail($expediente->juzgado_id),
         ]);
     }
 

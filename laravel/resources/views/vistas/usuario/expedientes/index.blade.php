@@ -38,8 +38,13 @@
                                     <td>{{$expediente -> nro_fojas}}</td>
                                     <td class="text-right ">
                                         <a href="{{url('usuario/expedientes/'.$expediente->id.'/fojas')}}">
-                                            <button class="btn btn-info">
+                                            <button class="btn btn-success">
                                                 <i class="fa fa-copy"></i>
+                                            </button>
+                                        </a>
+                                        <a href="{{url('usuario/expedientes/'.$expediente->id)}}">
+                                            <button class="btn btn-info">
+                                                <i class="fa fa-eye"></i>
                                             </button>
                                         </a>
                                     </td>
