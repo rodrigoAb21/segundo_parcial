@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class ExpedienteController extends Controller
 {
     public function index(){
-        return view('vistas.expedientes.index',
+        return view('vistas.admin.expedientes.index',
             [
                 'expedientes' => Expediente::paginate(10),
             ]);
@@ -22,7 +22,7 @@ class ExpedienteController extends Controller
     public function create(){
         $materias = ['FAMILIAR', 'PENAL', 'CIVIL', 'LABORAL', 'CONSTITUCIONAL'];
 
-        return view('vistas.expedientes.create', [
+        return view('vistas.admin.expedientes.create', [
             'materias' => $materias,
             'tipos' => TipoProceso::all(),
             'jueces' => User::where('tipo', '=', 'Juez')->get(),
@@ -51,13 +51,13 @@ class ExpedienteController extends Controller
 
         $expediente->save();
 
-        return redirect('expedientes');
+        return redirect('administrador/expedientes');
 
     }
 
     public function edit($id){
         $materias = ['FAMILIAR', 'PENAL', 'CIVIL', 'LABORAL', 'CONSTITUCIONAL'];
-        return view('vistas.expedientes.edit', [
+        return view('vistas.admin.expedientes.edit', [
             'expediente' => Expediente::findOrFail($id),
             'materias' => $materias,
             'tipos' => TipoProceso::all(),
@@ -85,26 +85,26 @@ class ExpedienteController extends Controller
 
         $expediente->update();
 
-        return redirect('expedientes');
+        return redirect('administrador/expedientes');
     }
 
     public function destroy($id){
         $expediente = Expediente::findOrFail($id);
         $expediente->delete();
 
-        return redirect('expedientes');
+        return redirect('administrador/expedientes');
     }
 
     public function fojas($id){
         $fojas = Foja::where('expediente_id', '=', $id)->get();
-        return view('vistas.expedientes.fojas.index', [
+        return view('vistas.admin.expedientes.fojas.index', [
             'expediente' => Expediente::findOrFail($id),
             'fojas' => $fojas,
         ]);
     }
 
     public function verFoja($id, $fojaId){
-        return view('vistas.expedientes.fojas.view', [
+        return view('vistas.admin.expedientes.fojas.view', [
             'foja' => Foja::findOrFail($fojaId),
         ]);
     }
@@ -113,6 +113,6 @@ class ExpedienteController extends Controller
         $foja = Foja::findOrFail($fojaId);
         $foja->delete();
 
-        return redirect('expedientes/'.$id.'/fojas');
+        return redirect('administrador/expedientes/'.$id.'/fojas');
     }
 }

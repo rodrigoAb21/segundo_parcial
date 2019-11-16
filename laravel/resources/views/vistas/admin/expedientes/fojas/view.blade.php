@@ -38,7 +38,7 @@
 
                         </div>
 
-                    <a href="{{url('expedientes/'.$foja->expediente_id.'/fojas')}}" class="btn btn-warning">Atras</a>
+                    <a href="{{url('administrador/expedientes/'.$foja->expediente_id.'/fojas')}}" class="btn btn-warning">Atras</a>
                 </div>
             </div>
         </div>

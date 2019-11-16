@@ -25,14 +25,28 @@ Route::post('logout', [
 ]);
 
 Route::get('/', function () {
-    return view('home');
+    return redirect('administrador');
 })->middleware('auth');
 
-Route::resource('usuarios', 'UsuarioController');
-Route::resource('juzgados', 'JuzgadoController');
-Route::resource('tipos', 'TipoProcesoController');
-Route::resource('expedientes', 'ExpedienteController');
+Route::middleware('auth')->group(function () {
+    Route::middleware('administrador')->group(function () {
 
-Route::get('expedientes/{id}/fojas', 'ExpedienteController@fojas');
-Route::get('expedientes/{id}/fojas/{fojaId}', 'ExpedienteController@verFoja');
-Route::delete('expedientes/{id}/fojas/{fojaId}', 'ExpedienteController@eliminarFoja');
+        Route::get('administrador', function () {
+            return view('home');
+        });
+
+        Route::resource('administrador/usuarios', 'UsuarioController');
+        Route::resource('administrador/juzgados', 'JuzgadoController');
+        Route::resource('administrador/tipos', 'TipoProcesoController');
+        Route::resource('administrador/expedientes', 'ExpedienteController');
+
+        Route::get('administrador/expedientes/{id}/fojas', 'ExpedienteController@fojas');
+        Route::get('administrador/expedientes/{id}/fojas/{fojaId}', 'ExpedienteController@verFoja');
+        Route::delete('administrador/expedientes/{id}/fojas/{fojaId}', 'ExpedienteController@eliminarFoja');
+    });
+});
+
+
+
+
+

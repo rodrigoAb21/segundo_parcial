@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h3 class="pb-2">Expedientes
                         <div class="float-right">
-                            <a class="btn btn-success" href="{{url('expedientes/create')}}">
+                            <a class="btn btn-success" href="{{url('administrador/expedientes/create')}}">
                                 <i class="fa fa-plus"></i> Nuevo
                             </a>
                         </div>
@@ -37,17 +37,17 @@
                                     <td>{{$expediente -> materia}}</td>
                                     <td>{{$expediente -> nro_fojas}}</td>
                                     <td class="text-right ">
-                                        <a href="{{url('expedientes/'.$expediente->id.'/fojas')}}">
+                                        <a href="{{url('administrador/expedientes/'.$expediente->id.'/fojas')}}">
                                             <button class="btn btn-info">
                                                 <i class="fa fa-copy"></i>
                                             </button>
                                         </a>
-                                        <a href="{{url('expedientes/'.$expediente->id.'/edit')}}">
+                                        <a href="{{url('administrador/expedientes/'.$expediente->id.'/edit')}}">
                                             <button class="btn btn-warning">
                                                 <i class="fa fa-pen"></i>
                                             </button>
                                         </a>
-                                        <button type="button" class="btn btn-danger" onclick="modalEliminar('{{$expediente -> nurej}}', '{{url('expedientes/'.$expediente -> id)}}')">
+                                        <button type="button" class="btn btn-danger" onclick="modalEliminar('{{$expediente -> nurej}}', '{{url('administrador/expedientes/'.$expediente -> id)}}')">
                                             <i class="fa fa-times"></i>
                                         </button>
                                     </td>

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class JuzgadoController extends Controller
 {
     public function index(){
-        return view('vistas.juzgados.index',
+        return view('vistas.admin.juzgados.index',
             [
                 'juzgados' => Juzgado::paginate(10),
             ]);
@@ -16,7 +16,7 @@ class JuzgadoController extends Controller
 
     public function create(){
         $departamentos = ['La Paz', 'Oruro', 'Potosi', 'Cochabamba', 'Sucre', 'Tarija', 'Pando', 'Beni', 'Santa Cruz'];
-        return view('vistas.juzgados.create', ['departamentos' => $departamentos]);
+        return view('vistas.admin.juzgados.create', ['departamentos' => $departamentos]);
     }
 
     public function store(Request $request){
@@ -26,13 +26,13 @@ class JuzgadoController extends Controller
         $juzgado->departamento = $request['departamento'];
         $juzgado->save();
 
-        return redirect('juzgados');
+        return redirect('administrador/juzgados');
 
     }
 
     public function edit($id){
         $departamentos = ['La Paz', 'Oruro', 'Potosi', 'Cochabamba', 'Sucre', 'Tarija', 'Pando', 'Beni', 'Santa Cruz'];
-        return view('vistas.juzgados.edit', [
+        return view('vistas.admin.juzgados.edit', [
             'juzgado' => Juzgado::findOrFail($id),
             'departamentos' => $departamentos,
         ]);
@@ -44,13 +44,13 @@ class JuzgadoController extends Controller
         $juzgado->departamento = $request['departamento'];
         $juzgado->update();
 
-        return redirect('juzgados');
+        return redirect('administrador/juzgados');
     }
 
     public function destroy($id){
         $juzgado = Juzgado::findOrFail($id);
         $juzgado->delete();
 
-        return redirect('juzgados');
+        return redirect('administrador/juzgados');
     }
 }

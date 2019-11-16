@@ -9,7 +9,7 @@ class TipoProcesoController extends Controller
 {
     public function index()
     {
-        return view('vistas.tipos.index',
+        return view('vistas.admin.tipos.index',
             [
                 'tipos' => TipoProceso::paginate(10),
             ]);
@@ -17,7 +17,7 @@ class TipoProcesoController extends Controller
 
     public function create()
     {
-        return view('vistas.tipos.create');
+        return view('vistas.admin.tipos.create');
     }
 
 
@@ -27,12 +27,12 @@ class TipoProcesoController extends Controller
         $tipo->nombre = $request['nombre'];
         $tipo->save();
 
-        return redirect('tipos');
+        return redirect('administrador/tipos');
     }
 
     public function edit($id)
     {
-        return view('vistas.tipos.edit',
+        return view('vistas.admin.tipos.edit',
             [
                 'tipo' => TipoProceso::findOrFail($id),
             ]);
@@ -45,7 +45,7 @@ class TipoProcesoController extends Controller
         $tipo->nombre = $request['nombre'];
         $tipo->update();
 
-        return redirect('tipos');
+        return redirect('administrador/tipos');
     }
 
 
@@ -54,6 +54,6 @@ class TipoProcesoController extends Controller
         $tipo = TipoProceso::findOrFail($id);
         $tipo->delete();
 
-        return redirect('tipos');
+        return redirect('administrador/tipos');
     }
 }

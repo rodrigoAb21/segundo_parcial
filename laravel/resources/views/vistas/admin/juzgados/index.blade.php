@@ -5,9 +5,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="pb-2">Usuarios
+                    <h3 class="pb-2">Juzgados
                         <div class="float-right">
-                            <a class="btn btn-success" href="{{url('usuarios/create')}}">
+                            <a class="btn btn-success" href="{{url('administrador/juzgados/create')}}">
                                 <i class="fa fa-plus"></i> Nuevo
                             </a>
                         </div>
@@ -18,27 +18,23 @@
                             <tr>
                                 <th>ID</th>
                                 <th>NOMBRE</th>
-                                <th>TIPO</th>
-                                <th>TELEFONO</th>
-                                <th>EMAIL</th>
+                                <th>DEPARTAMENTO</th>
                                 <th>OPCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($usuarios as $usuario)
+                            @foreach($juzgados as $juzgado)
                                 <tr>
-                                    <td>{{$usuario -> id}}</td>
-                                    <td>{{$usuario -> nombre}}</td>
-                                    <td>{{$usuario -> tipo}}</td>
-                                    <td>{{$usuario -> telefono}}</td>
-                                    <td>{{$usuario -> email}}</td>
+                                    <td>{{$juzgado -> id}}</td>
+                                    <td>{{$juzgado -> nombre}}</td>
+                                    <td>{{$juzgado -> departamento}}</td>
                                     <td class="text-right ">
-                                        <a href="{{url('usuarios/'.$usuario->id.'/edit')}}">
+                                        <a href="{{url('administrador/juzgados/'.$juzgado->id.'/edit')}}">
                                             <button class="btn btn-warning">
                                                 <i class="fa fa-pen"></i>
                                             </button>
                                         </a>
-                                        <button type="button" class="btn btn-danger" onclick="modalEliminar('{{$usuario -> nombre}}', '{{url('usuarios/'.$usuario -> id)}}')">
+                                        <button type="button" class="btn btn-danger" onclick="modalEliminar('{{$juzgado -> nombre}}', '{{url('administrador/juzgados/'.$juzgado -> id)}}')">
                                             <i class="fa fa-times"></i>
                                         </button>
                                     </td>
@@ -46,7 +42,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{$usuarios->links('pagination.default')}}
+                        {{$juzgados->links('pagination.default')}}
                     </div>
                 </div>
             </div>
@@ -59,8 +55,8 @@
             function modalEliminar(nombre, url) {
                 $('#modalEliminarForm').attr("action", url);
                 $('#metodo').val("delete");
-                $('#modalEliminarTitulo').html("Eliminar Usuario");
-                $('#modalEliminarEnunciado').html("Realmente desea eliminar al usuario: " + nombre + "?");
+                $('#modalEliminarTitulo').html("Eliminar juzgado");
+                $('#modalEliminarEnunciado').html("Realmente desea eliminar al juzgado: " + nombre + "?");
                 $('#modalEliminar').modal('show');
             }
 

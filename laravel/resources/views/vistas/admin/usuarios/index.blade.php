@@ -5,9 +5,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="pb-2">Tipos de proceso
+                    <h3 class="pb-2">Usuarios
                         <div class="float-right">
-                            <a class="btn btn-success" href="{{url('tipos/create')}}">
+                            <a class="btn btn-success" href="{{url('administrador/usuarios/create')}}">
                                 <i class="fa fa-plus"></i> Nuevo
                             </a>
                         </div>
@@ -18,21 +18,27 @@
                             <tr>
                                 <th>ID</th>
                                 <th>NOMBRE</th>
+                                <th>TIPO</th>
+                                <th>TELEFONO</th>
+                                <th>EMAIL</th>
                                 <th>OPCIONES</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($tipos as $tipo)
+                            @foreach($usuarios as $usuario)
                                 <tr>
-                                    <td>{{$tipo -> id}}</td>
-                                    <td>{{$tipo -> nombre}}</td>
+                                    <td>{{$usuario -> id}}</td>
+                                    <td>{{$usuario -> nombre}}</td>
+                                    <td>{{$usuario -> tipo}}</td>
+                                    <td>{{$usuario -> telefono}}</td>
+                                    <td>{{$usuario -> email}}</td>
                                     <td class="text-right ">
-                                        <a href="{{url('tipos/'.$tipo->id.'/edit')}}">
+                                        <a href="{{url('administrador/usuarios/'.$usuario->id.'/edit')}}">
                                             <button class="btn btn-warning">
                                                 <i class="fa fa-pen"></i>
                                             </button>
                                         </a>
-                                        <button type="button" class="btn btn-danger" onclick="modalEliminar('{{$tipo -> nombre}}', '{{url('tipos/'.$tipo -> id)}}')">
+                                        <button type="button" class="btn btn-danger" onclick="modalEliminar('{{$usuario -> nombre}}', '{{url('administrador/usuarios/'.$usuario -> id)}}')">
                                             <i class="fa fa-times"></i>
                                         </button>
                                     </td>
@@ -40,7 +46,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{$tipos->links('pagination.default')}}
+                        {{$usuarios->links('pagination.default')}}
                     </div>
                 </div>
             </div>
@@ -53,8 +59,8 @@
             function modalEliminar(nombre, url) {
                 $('#modalEliminarForm').attr("action", url);
                 $('#metodo').val("delete");
-                $('#modalEliminarTitulo').html("Eliminar tipo");
-                $('#modalEliminarEnunciado').html("Realmente desea eliminar la tipo: " + nombre + "?");
+                $('#modalEliminarTitulo').html("Eliminar Usuario");
+                $('#modalEliminarEnunciado').html("Realmente desea eliminar al usuario: " + nombre + "?");
                 $('#modalEliminar').modal('show');
             }
 

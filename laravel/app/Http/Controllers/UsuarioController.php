@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UsuarioController extends Controller
 {
     public function index(){
-        return view('vistas.usuarios.index',
+        return view('vistas.admin.usuarios.index',
             [
                 'usuarios' => User::where('tipo', '!=', 'admin')->paginate(10),
             ]);
@@ -16,7 +16,7 @@ class UsuarioController extends Controller
 
     public function create(){
         $tipos = ['Juez', 'Abogado', 'Demandado/Demandante'];
-        return view('vistas.usuarios.create',[
+        return view('vistas.admin.usuarios.create',[
             'tipos' => $tipos,
         ]);
     }
@@ -24,40 +24,48 @@ class UsuarioController extends Controller
     public function store(Request $request){
         $usuario = new User();
         $usuario->nombre = $request['nombre'];
+        $usuario->ci = $request['ci'];
+        $usuario->codigo = $request['codigo'];
         $usuario->telefono = $request['telefono'];
         $usuario->email = $request['email'];
         $usuario->password = bcrypt($request['password']);
-        $usuario->tipo = 'Usuario';
+        $usuario->tipo = $request['tipo'];
 
         $usuario->save();
 
-        return redirect('usuarios');
+        return redirect('administrador/usuarios');
 
     }
 
     public function edit($id){
-        return view('vistas.usuarios.edit', [
+        $tipos = ['Juez', 'Abogado', 'Demandado/Demandante'];
+
+        return view('vistas.admin.usuarios.edit', [
             'usuario' => User::findOrFail($id),
+            'tipos' => $tipos,
         ]);
     }
 
     public function update(Request $request, $id){
         $usuario = User::findOrFail($id);
         $usuario->nombre = $request['nombre'];
+        $usuario->ci = $request['ci'];
+        $usuario->codigo = $request['codigo'];
         $usuario->telefono = $request['telefono'];
         $usuario->email = $request['email'];
+        $usuario->tipo = $request['tipo'];
         if (trim($request['password']) != ''){
             $usuario->password = bcrypt($request['password']);
         }
         $usuario->update();
 
-        return redirect('usuarios');
+        return redirect('administrador/usuarios');
     }
 
     public function destroy($id){
         $usuario = User::findOrFail($id);
         $usuario->delete();
 
-        return redirect('usuarios');
+        return redirect('administrador/usuarios');
     }
 }

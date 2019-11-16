@@ -39,7 +39,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand ligh" href="{{url('/')}}">
+                    <a class="navbar-brand ligh" href="{{url('administrador/')}}">
                         <!-- Logo icon -->
                         <b class="light-logo">
                             <i class="fa fa-archive"></i>
@@ -107,26 +107,26 @@
 
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="{{ Request::is('usuarios*') ? 'nav-item active' : 'nav-item' }}">
-                            <a href="{{url('usuarios')}}" >
+                        <li class="{{ Request::is('administrador/usuarios*') ? 'nav-item active' : 'nav-item' }}">
+                            <a href="{{url('administrador/usuarios')}}" >
                                 <i class="fa fa-user-tie"></i>
                                 <span class="hide-menu"> Usuarios</span>
                             </a>
                         </li>
-                        <li class="{{ Request::is('juzgados*') ? 'nav-item active' : 'nav-item' }}">
-                            <a href="{{url('juzgados')}}" >
+                        <li class="{{ Request::is('administrador/juzgados*') ? 'nav-item active' : 'nav-item' }}">
+                            <a href="{{url('administrador/juzgados')}}" >
                                 <i class="fa fa-gavel"></i>
                                 <span class="hide-menu"> Juzgados</span>
                             </a>
                         </li>
-                        <li class="{{ Request::is('tipos*') ? 'nav-item active' : 'nav-item' }}">
-                            <a href="{{url('tipos')}}" >
+                        <li class="{{ Request::is('administrador/tipos*') ? 'nav-item active' : 'nav-item' }}">
+                            <a href="{{url('administrador/tipos')}}" >
                                 <i class="fa fa-window-restore"></i>
                                 <span class="hide-menu"> Tipos de procesos</span>
                             </a>
                         </li>
-                        <li class="{{ Request::is('expedientes*') ? 'nav-item active' : 'nav-item' }}">
-                            <a href="{{url('expedientes')}}" >
+                        <li class="{{ Request::is('administrador/expedientes*') ? 'nav-item active' : 'nav-item' }}">
+                            <a href="{{url('administrador/expedientes')}}" >
                                 <i class="fa fa-archive"></i>
                                 <span class="hide-menu"> Expedientes</span>
                             </a>

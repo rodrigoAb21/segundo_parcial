@@ -6,10 +6,10 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="pb-2">
-                        Nuevo juzgado
+                        Nuevo tipo
                     </h3>
 
-                    <form method="POST" action="{{url('juzgados')}}" autocomplete="off">
+                    <form method="POST" action="{{url('administrador/tipos')}}" autocomplete="off">
                         {{csrf_field()}}
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -22,18 +22,8 @@
                                            name="nombre">
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Departamento</label>
-                                    <select name="departamento" class="form-control" required>
-                                        @foreach($departamentos as $departamento)
-                                            <option value="{{$departamento}}">{{$departamento}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
                         </div>
-                        <a href="{{url('juzgados')}}" class="btn btn-warning">Atras</a>
+                        <a href="{{url('administrador/tipos')}}" class="btn btn-warning">Atras</a>
                         <button type="submit" class="btn btn-info">Guardar</button>
                     </form>
                 </div>
