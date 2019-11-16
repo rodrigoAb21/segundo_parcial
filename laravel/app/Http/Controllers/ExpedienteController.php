@@ -111,7 +111,12 @@ class ExpedienteController extends Controller
 
     public function eliminarFoja($id, $fojaId){
         $foja = Foja::findOrFail($fojaId);
-        $foja->delete();
+        if ($foja->delete()){
+            $expediente = Expediente::findOrFail($id);
+            $expediente->nro_fojas = $expediente->nro_fojas - 1;
+
+            $expediente->update();
+        }
 
         return redirect('administrador/expedientes/'.$id.'/fojas');
     }

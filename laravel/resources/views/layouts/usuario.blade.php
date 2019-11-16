@@ -39,7 +39,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand ligh" href="{{url('administrador')}}">
+                    <a class="navbar-brand ligh" href="{{url('usuario')}}">
                         <!-- Logo icon -->
                         <b class="light-logo">
                             <i class="fa fa-archive"></i>
@@ -107,28 +107,16 @@
 
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="{{ Request::is('administrador/usuarios*') ? 'nav-item active' : 'nav-item' }}">
-                            <a href="{{url('administrador/usuarios')}}" >
-                                <i class="fa fa-user-tie"></i>
-                                <span class="hide-menu"> Usuarios</span>
-                            </a>
-                        </li>
-                        <li class="{{ Request::is('administrador/juzgados*') ? 'nav-item active' : 'nav-item' }}">
-                            <a href="{{url('administrador/juzgados')}}" >
-                                <i class="fa fa-gavel"></i>
-                                <span class="hide-menu"> Juzgados</span>
-                            </a>
-                        </li>
-                        <li class="{{ Request::is('administrador/tipos*') ? 'nav-item active' : 'nav-item' }}">
-                            <a href="{{url('administrador/tipos')}}" >
-                                <i class="fa fa-window-restore"></i>
-                                <span class="hide-menu"> Tipos de procesos</span>
-                            </a>
-                        </li>
-                        <li class="{{ Request::is('administrador/expedientes*') ? 'nav-item active' : 'nav-item' }}">
-                            <a href="{{url('administrador/expedientes')}}" >
+                        <li class="{{ Request::is('usuario/expedientes*') ? 'nav-item active' : 'nav-item' }}">
+                            <a href="{{url('usuario/expedientes')}}" >
                                 <i class="fa fa-archive"></i>
                                 <span class="hide-menu"> Expedientes</span>
+                            </a>
+                        </li>
+                        <li class="{{ Request::is('usuario/usuarios*') ? 'nav-item active' : 'nav-item' }}">
+                            <a href="{{url('usuario/editarCuenta/'.\Illuminate\Support\Facades\Auth::user()->id)}}" >
+                                <i class="fa fa-user-tie"></i>
+                                <span class="hide-menu"> Editar Cuenta</span>
                             </a>
                         </li>
                     </ul>

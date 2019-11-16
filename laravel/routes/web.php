@@ -44,6 +44,20 @@ Route::middleware('auth')->group(function () {
         Route::get('administrador/expedientes/{id}/fojas/{fojaId}', 'ExpedienteController@verFoja');
         Route::delete('administrador/expedientes/{id}/fojas/{fojaId}', 'ExpedienteController@eliminarFoja');
     });
+
+    Route::middleware('usuario')->group(function () {
+
+        Route::get('usuario', function () {
+            return view('layouts.usuario');
+        });
+
+        Route::get('usuario/expedientes', 'UsuarioWebController@index');
+        Route::get('usuario/expedientes/{id}/fojas', 'UsuarioWebController@fojas');
+        Route::get('usuario/expedientes/{id}/fojas/{fojaId}', 'UsuarioWebController@verFoja');
+        Route::get('usuario/editarCuenta/{id}', 'UsuarioWebController@editUsuario');
+        Route::patch('usuario/editarCuenta/{id}', 'UsuarioWebController@updateUsuario');
+
+    });
 });
 
 
