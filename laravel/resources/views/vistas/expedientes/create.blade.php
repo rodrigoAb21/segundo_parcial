@@ -9,7 +9,7 @@
                         Nuevo Expediente
                     </h3>
 
-                    <form method="POST" action="{{url('admin/expedientes')}}" autocomplete="off">
+                    <form method="POST" action="{{url('expedientes')}}" autocomplete="off">
                         {{csrf_field()}}
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -81,8 +81,19 @@
 
                              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <label>Tipo</label>
+                                    <label>Juzgado</label>
                                     <select class="form-control" name="juzgado_id">
+                                        @foreach($juzgados as $juzgado)
+                                            <option value="{{$juzgado->id}}">{{$juzgado->nombre}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Juez</label>
+                                    <select class="form-control" name="juez_id">
                                         @foreach($usuarios as $usuario)
                                             <option value="{{$usuario->id}}">{{$usuario->nombre}}</option>
                                         @endforeach

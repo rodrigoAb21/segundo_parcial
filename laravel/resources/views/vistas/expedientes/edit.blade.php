@@ -6,74 +6,118 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="pb-2">
-                        Editar Empleado: {{$eleccion->id}}
+                        Editar Expediente: {{$expediente->id}}
                     </h3>
 
-                    <form method="POST" action="{{url('admin/elecciones/'.$eleccion->id)}}" autocomplete="off">
+                    <form method="POST" action="{{url('expedientes/'.$expediente->id)}}" autocomplete="off">
                         {{csrf_field()}}
                         {{method_field('PATCH')}}
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <label>Nombre</label>
-                                    <input required
-                                           type="text"
-                                           class="form-control"
-                                           value="{{$eleccion->nombre}}"
-                                           name="nombre">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Fecha</label>
-                                    <input required
-                                           type="date"
-                                           class="form-control"
-                                           value="{{$eleccion->fecha}}"
-                                           name="fecha">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Nro Mesas</label>
+                                    <label>NUREJ</label>
                                     <input required
                                            type="number"
                                            class="form-control"
-                                           value="{{$eleccion->mesas}}"
-                                           min="1"
-                                           max="200"
-                                           name="mesas">
+                                           value="{{$expediente->nurej}}"
+                                           name="nurej">
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <label>Estado</label>
-                                    <select class="form-control" name="estado">
-                                        @foreach($estados as $estado)
-                                            @if($estado == $eleccion->estado)
-                                                <option selected value="{{$estado}}">{{$estado}}</option>
+                                    <label>WEB_ID</label>
+                                    <input required
+                                           type="text"
+                                           class="form-control"
+                                           value="{{$expediente->web_id}}"
+                                           name="web_id">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Descripcion</label>
+                                    <input
+                                            type="text"
+                                            class="form-control"
+                                            value="{{$expediente->descripcion}}"
+                                            name="descripcion">
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Materia</label>
+                                    <select class="form-control" name="materia">
+                                        @foreach($materias as $materia)
+                                            @if($expediente->materia == $materia)
+                                                <option selected value="{{$materia}}">{{$materia}}</option>
                                             @else
-                                                <option value="{{$estado}}">{{$estado}}</option>
+                                                <option value="{{$materia}}">{{$materia}}</option>
                                             @endif
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Procedimiento</label>
+                                    <input required
+                                           type="text"
+                                           class="form-control"
+                                           value="{{$expediente->procedimiento}}"
+                                           name="procedimiento">
+                                </div>
+                            </div>
+
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <label>Tipo</label>
-                                    <select class="form-control" name="tipo">
+                                    <select class="form-control" name="tipo_proceso_id">
                                         @foreach($tipos as $tipo)
-                                            @if($tipo == $eleccion->tipo)
-                                                <option selected value="{{$tipo}}">{{$tipo}}</option>
+                                            @if($expediente->tipo_proceso_id == $tipo->id)
+                                                <option selected value="{{$tipo->id}}">{{$tipo->nombre}}</option>
                                             @else
-                                                <option value="{{$tipo}}">{{$tipo}}</option>
+                                                <option value="{{$tipo->id}}">{{$tipo->nombre}}</option>
                                             @endif
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Juzgado</label>
+                                    <select class="form-control" name="juzgado_id">
+                                        @foreach($juzgados as $juzgado)
+                                            @if($expediente->juzgado_id == $juzgado->id)
+                                                <option selected value="{{$juzgado->id}}">{{$juzgado->nombre}}</option>
+                                            @else
+                                                <option value="{{$juzgado->id}}">{{$juzgado->nombre}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Juez</label>
+                                    <select class="form-control" name="juez_id">
+                                        @foreach($usuarios as $usuario)
+                                            @if($expediente->juez_id == $usuario->id)
+                                                <option selected value="{{$usuario->id}}">{{$usuario->nombre}}</option>
+                                            @else
+                                                <option value="{{$usuario->id}}">{{$usuario->nombre}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
                         </div>
                         <a href="{{url('expedientes')}}" class="btn btn-warning">Atras</a>
                         <button type="submit" class="btn btn-info">Guardar</button>

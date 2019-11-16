@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Expediente;
+use App\Juzgado;
 use App\TipoProceso;
 use App\User;
 use Carbon\Carbon;
@@ -24,6 +25,7 @@ class ExpedienteController extends Controller
             'materias' => $materias,
             'tipos' => TipoProceso::all(),
             'usuarios' => User::where('tipo', '=', 'Juez')->get(),
+            'juzgados' => Juzgado::all(),
             ]);
     }
 
@@ -53,6 +55,7 @@ class ExpedienteController extends Controller
             'materias' => $materias,
             'tipos' => TipoProceso::all(),
             'usuarios' => User::where('tipo', '=', 'Juez')->get(),
+            'juzgados' => Juzgado::all(),
         ]);
     }
 
@@ -63,7 +66,6 @@ class ExpedienteController extends Controller
         $expediente->descripcion = $request['descripcion'];
         $expediente->materia = $request['materia'];
         $expediente->procedimiento = $request['procedimiento'];
-        $expediente->nro_fojas = $request['nro_fojas'];
         $expediente->juez_id = $request['juez_id'];
         $expediente->juzgado_id = $request['juzgado_id'];
         $expediente->tipo_proceso_id = $request['tipo_proceso_id'];
