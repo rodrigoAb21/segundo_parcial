@@ -250,6 +250,19 @@ class DatabaseSeeder extends Seeder
             'expediente_id' => 1,
         ]);
 
+        DB::table('foja')->insert([
+            'descripcion' => 'Lorem Completo',
+            'fecha' => \Carbon\Carbon::now(),
+            'tipo' => 'Documento',
+            'src' => 'docs',
+            'contenido' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus elementum urna vel aliquet. Donec eu magna nec libero euismod egestas sed et diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce mattis placerat lectus non sollicitudin. Sed non purus porta, pulvinar nunc nec, fringilla erat. Pellentesque felis felis, molestie vitae odio ac, fermentum fermentum odio. Aliquam pharetra sed eros at ultricies. Etiam ac orci a magna feugiat ultricies.
+
+Nam gravida velit velit, et eleifend velit efficitur et. Phasellus ut suscipit justo, sit amet posuere tellus. Proin molestie justo sem, id fermentum ipsum interdum nec. Nunc porttitor ante erat, ac blandit tortor blandit in. Aliquam at metus arcu. Nam iaculis libero lorem. Sed et vulputate mi. Morbi efficitur eros eu nulla vehicula, vel congue enim ornare. Phasellus eu massa finibus, tincidunt elit nec, lacinia nisl. Donec nec maximus arcu. In hac habitasse platea dictumst. Mauris ullamcorper mauris quis lacus posuere pretium. Curabitur scelerisque, urna condimentum tempor fermentum, quam dolor elementum mi, ac finibus neque metus in sapien. Praesent finibus lobortis elit, id ultrices eros auctor sit amet. Vivamus laoreet lorem sit amet est porttitor, ac ornare felis facilisis. Duis rutrum ullamcorper ante, sit amet porttitor neque luctus nec.
+
+Cras rhoncus velit a leo tristique, pulvinar egestas dui consectetur. Phasellus sed purus sed magna interdum rutrum. Donec vel volutpat ligula. Proin et venenatis magna. In at nisl eros. Pellentesque lobortis mattis urna, tempor ultrices nibh congue eget. Nunc ultricies dui vel neque auctor, eget consectetur purus feugiat. Proin sagittis venenatis nisi, vel tincidunt ligula elementum ut. Vestibulum mollis ipsum finibus tristique aliquam. Nunc nec consectetur nisi. Ut a congue turpis, eu ornare est.',
+            'expediente_id' => 2,
+        ]);
+
 
     }
 }
