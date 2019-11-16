@@ -221,6 +221,34 @@ class DatabaseSeeder extends Seeder
 
         // Fojas
 
+        DB::table('foja')->insert([
+            'descripcion' => 'Lorem parte 1',
+            'fecha' => \Carbon\Carbon::now(),
+            'tipo' => 'Documento',
+            'src' => 'docs',
+            'contenido' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque justo velit, at luctus tellus consectetur at. Phasellus urna dolor, venenatis ut consequat id, placerat sit amet erat. Praesent nec tempus purus, ac pulvinar purus. Duis eu maximus neque, id ornare risus. Donec viverra metus sit amet scelerisque congue. Mauris nec neque bibendum, imperdiet tellus ut, iaculis nunc. Praesent sollicitudin leo ac velit elementum, non facilisis neque condimentum. Maecenas luctus laoreet est, ut laoreet purus. Nam aliquam dolor vitae ante sodales, eget fringilla ipsum facilisis. Nulla pulvinar in libero vitae porta. Proin euismod libero ac massa pretium rhoncus. Proin sed tincidunt velit. Proin pulvinar nunc ac orci tincidunt, quis suscipit mauris viverra. In lobortis tempor pretium.',
+            'expediente_id' => 1,
+        ]);
+
+        DB::table('foja')->insert([
+            'descripcion' => 'Lorem parte 2',
+            'fecha' => \Carbon\Carbon::now(),
+            'tipo' => 'Documento',
+            'src' => 'docs',
+            'contenido' => 'Curabitur vel auctor nisl, sit amet facilisis ipsum. Nulla consectetur mi id felis venenatis ultricies. Sed elementum orci vel justo lacinia, at posuere dui tristique. Mauris risus ante, sagittis ut malesuada a, facilisis sit amet sem. Ut eget odio metus. Vestibulum lorem quam, fringilla eu euismod a, consequat non velit. Donec et lacus at tortor suscipit ullamcorper. Nulla facilisi. Nulla tristique ut nibh sit amet laoreet. Ut sit amet convallis diam. Sed non eros et libero vehicula vehicula eu vitae tortor.',
+            'expediente_id' => 1,
+        ]);
+
+
+
+        DB::table('foja')->insert([
+            'descripcion' => 'Lorem parte 3',
+            'fecha' => \Carbon\Carbon::now(),
+            'tipo' => 'Documento',
+            'src' => 'docs',
+            'contenido' => 'Etiam convallis, elit eu posuere tincidunt, risus est eleifend sem, a mattis turpis quam lobortis ante. Fusce vel nibh ut diam finibus viverra. Nunc ac massa ut tortor sollicitudin consectetur. Sed consectetur sapien nec malesuada suscipit. Phasellus tempor finibus velit, sit amet eleifend nisi imperdiet a. Donec ornare eros eget neque porttitor, a bibendum ipsum convallis. Donec in ipsum nec libero hendrerit ultrices at eu erat. Donec eget lobortis turpis. Nulla convallis ligula vel tortor aliquam, eu tempor ante mollis. Curabitur at luctus sapien, vitae imperdiet nisl. Vestibulum placerat, urna et porta mollis, nisi arcu ullamcorper augue, vel elementum est enim sed tortor. Proin vestibulum augue eget porttitor ultricies. Nunc eget pellentesque arcu.',
+            'expediente_id' => 1,
+        ]);
 
 
     }

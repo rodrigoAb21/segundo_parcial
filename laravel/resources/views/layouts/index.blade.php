@@ -127,7 +127,7 @@
                         </li>
                         <li class="{{ Request::is('expedientes*') ? 'nav-item active' : 'nav-item' }}">
                             <a href="{{url('expedientes')}}" >
-                                <i class="fa fa-window-restore"></i>
+                                <i class="fa fa-archive"></i>
                                 <span class="hide-menu"> Expedientes</span>
                             </a>
                         </li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Expediente;
+use App\Foja;
 use App\Juzgado;
 use App\TipoProceso;
 use App\User;
@@ -92,5 +93,26 @@ class ExpedienteController extends Controller
         $expediente->delete();
 
         return redirect('expedientes');
+    }
+
+    public function fojas($id){
+        $fojas = Foja::where('expediente_id', '=', $id)->get();
+        return view('vistas.expedientes.fojas.index', [
+            'expediente' => Expediente::findOrFail($id),
+            'fojas' => $fojas,
+        ]);
+    }
+
+    public function verFoja($id, $fojaId){
+        return view('vistas.expedientes.fojas.view', [
+            'foja' => Foja::findOrFail($fojaId),
+        ]);
+    }
+
+    public function eliminarFoja($id, $fojaId){
+        $foja = Foja::findOrFail($fojaId);
+        $foja->delete();
+
+        return redirect('expedientes/'.$id.'/fojas');
     }
 }

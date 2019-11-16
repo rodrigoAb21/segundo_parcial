@@ -17,8 +17,8 @@ class CreateFojaTable extends Migration
             $table->increments('id');
             $table->string('descripcion');
             $table->dateTime('fecha');
-            $table->dateTime('tipo');
-            $table->string('src');
+            $table->string('tipo');
+            $table->string('src')->nullable;
             $table->text('contenido');
 
             $table->unsignedInteger('expediente_id');

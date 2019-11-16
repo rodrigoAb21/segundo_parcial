@@ -32,3 +32,7 @@ Route::resource('usuarios', 'UsuarioController');
 Route::resource('juzgados', 'JuzgadoController');
 Route::resource('tipos', 'TipoProcesoController');
 Route::resource('expedientes', 'ExpedienteController');
+
+Route::get('expedientes/{id}/fojas', 'ExpedienteController@fojas');
+Route::get('expedientes/{id}/fojas/{fojaId}', 'ExpedienteController@verFoja');
+Route::delete('expedientes/{id}/fojas/{fojaId}', 'ExpedienteController@eliminarFoja');
