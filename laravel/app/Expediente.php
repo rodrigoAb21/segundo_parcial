@@ -16,6 +16,7 @@ class Expediente extends Model
         'descripcion',
         'materia',
         'procedimiento',
+        'estado',
         'nro_fojas',
         'juzgado_id',
         'tipo_proceso_id',

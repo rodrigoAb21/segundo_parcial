@@ -64,6 +64,21 @@
 
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
+                                    <label>Estado</label>
+                                    <select class="form-control" name="estado">
+                                        @foreach($estados as $estado)
+                                            @if($expediente->estado == $estado)
+                                                <option selected value="{{$estado}}">{{$estado}}</option>
+                                            @else
+                                                <option value="{{$estado}}">{{$estado}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
                                     <label>Procedimiento</label>
                                     <input required
                                            type="text"

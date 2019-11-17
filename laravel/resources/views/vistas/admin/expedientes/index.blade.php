@@ -18,8 +18,8 @@
                             <tr>
 
                                 <th>NUREJ</th>
-                                <th>WEB_ID</th>
                                 <th>RECEPCION</th>
+                                <th>ESTADO</th>
                                 <th>TIPO PROCESO</th>
                                 <th>MATERIA</th>
                                 <th>FOJAS</th>
@@ -31,8 +31,8 @@
                                 <tr>
 
                                     <td>{{$expediente -> nurej}}</td>
-                                    <td>{{$expediente -> web_id}}</td>
                                     <td>{{Carbon\Carbon::parse($expediente -> fecha_recepcion)->format('d/M/Y')}}</td>
+                                    <td>{{$expediente -> estado}}</td>
                                     <td>{{$expediente -> tipoProceso->nombre}}</td>
                                     <td>{{$expediente -> materia}}</td>
                                     <td>{{$expediente -> nro_fojas}}</td>

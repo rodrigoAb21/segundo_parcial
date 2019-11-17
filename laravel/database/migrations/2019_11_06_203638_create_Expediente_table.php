@@ -21,6 +21,7 @@ class CreateExpedienteTable extends Migration
             $table->string('descripcion')->nullable();
             $table->string('materia');
             $table->string('procedimiento');
+            $table->string('estado');
             $table->integer('nro_fojas');
 
             $table->unsignedInteger('tipo_proceso_id');

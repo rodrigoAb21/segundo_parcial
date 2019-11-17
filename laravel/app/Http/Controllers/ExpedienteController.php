@@ -20,10 +20,12 @@ class ExpedienteController extends Controller
     }
 
     public function create(){
+        $estados = ['Activo', 'Finalizado'];
         $materias = ['FAMILIAR', 'PENAL', 'CIVIL', 'LABORAL', 'CONSTITUCIONAL'];
 
         return view('vistas.admin.expedientes.create', [
             'materias' => $materias,
+            'estados' => $estados,
             'tipos' => TipoProceso::all(),
             'jueces' => User::where('tipo', '=', 'Juez')->get(),
             'abogados' => User::where('tipo', '=', 'Abogado')->get(),
@@ -40,6 +42,7 @@ class ExpedienteController extends Controller
         $expediente->descripcion = $request['descripcion'];
         $expediente->materia = $request['materia'];
         $expediente->procedimiento = $request['procedimiento'];
+        $expediente->estado = $request['estado'];
         $expediente->nro_fojas = 0;
         $expediente->juez_id = $request['juez_id'];
         $expediente->dmt_id = $request['dmt_id'];
@@ -56,9 +59,11 @@ class ExpedienteController extends Controller
     }
 
     public function edit($id){
+        $estados = ['Activo', 'Finalizado'];
         $materias = ['FAMILIAR', 'PENAL', 'CIVIL', 'LABORAL', 'CONSTITUCIONAL'];
         return view('vistas.admin.expedientes.edit', [
             'expediente' => Expediente::findOrFail($id),
+            'estados' => $estados,
             'materias' => $materias,
             'tipos' => TipoProceso::all(),
             'jueces' => User::where('tipo', '=', 'Juez')->get(),
@@ -75,6 +80,7 @@ class ExpedienteController extends Controller
         $expediente->descripcion = $request['descripcion'];
         $expediente->materia = $request['materia'];
         $expediente->procedimiento = $request['procedimiento'];
+        $expediente->estado = $request['estado'];
         $expediente->juez_id = $request['juez_id'];
         $expediente->dmt_id = $request['dmt_id'];
         $expediente->dmd_id = $request['dmd_id'];
